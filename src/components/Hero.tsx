@@ -75,7 +75,7 @@ export default function Hero() {
               className="relative"
             >
 <Image
-  src="/images/rolls.JPEG"
+  src="/images/rolls.jpeg"
   alt="Delicious Food"
   width={500}
   height={500}

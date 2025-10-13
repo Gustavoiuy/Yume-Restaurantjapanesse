@@ -60,7 +60,7 @@ export default function Navbar() {
           <div className="flex justify-center items-center space-x-3 relative overflow-hidden">
             <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full overflow-hidden">
               <Image
-                src="/images/logo.JPG"
+                src="/images/logo.jpg"
                 alt="Yume Logo"
                 width={100}
                 height={100}
