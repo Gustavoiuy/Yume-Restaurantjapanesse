@@ -22,7 +22,7 @@ export default function Navbar() {
   const { isScrolled } = useScroll();
 
   const redSakura = "#D7263D";
-  const gold = "#b08e27";
+  
 
   return (
     <motion.nav
