@@ -8,10 +8,21 @@ export interface MenuItem {
 }
 
 export interface ServiceItem {
-  id: number;
+   id: number;
   title: string;
-  description: string;
-  icon: string;
+  
+  image: string;
+ 
+  link: string;
+}
+export interface Promotions {
+
+   id: number;
+  title: string;
+  desc: string;
+  image: string;
+  link: string;
+  tag: string;
 }
 
 export interface TeamMember {

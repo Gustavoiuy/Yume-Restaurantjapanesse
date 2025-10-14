@@ -1,34 +1,31 @@
-import { MenuItem, ServiceItem, TeamMember, Testimonial } from "@/types";
+import { MenuItem, Promotions, ServiceItem, TeamMember, Testimonial } from "@/types";
 
 export const services: ServiceItem[] = [
-  {
+{
     id: 1,
-    title: "Master Chefs",
-    description:
-      "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
-    icon: "👨‍🍳",
+    title: "Brochetas",
+    image: "/images/entradas.jpg",
+    link: "/menu/entradas",
   },
   {
     id: 2,
-    title: "Quality Food",
-    description:
-      "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
-    icon: "🍽️",
+    title: "Platos Fuertes",
+    image: "/images/platos-fuertes.jpg",
+    link: "/menu/platos-fuertes",
   },
   {
     id: 3,
-    title: "Online Order",
-    description:
-      "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
-    icon: "🛒",
+    title: "Rollos sushi",
+    image: "/images/rollo.jpeg",
+    link: "/menu/postres",
   },
   {
     id: 4,
-    title: "24/7 Service",
-    description:
-      "Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam",
-    icon: "🕐",
+    title: "Postres",
+    image: "/images/rolls.jpeg",
+    link: "/menu/bebidas",
   },
+
 ];
 
 export const menuItems: MenuItem[] = [
@@ -183,3 +180,30 @@ export const testimonials: Testimonial[] = [
     rating: 5,
   },
 ];
+export const promotions:Promotions[]= [
+  {
+    id: 1,
+    title: "Combo Sushi Lovers",
+    desc: "Disfruta 2 rollos + bebida por un precio especial.",
+    image: "/images/promo1.jpeg",
+    link: "/menu",
+    tag: "Solo esta semana",
+  },
+  {
+    id: 2,
+    title: "Ramen & Chill",
+    desc: "Ramen clásico + té helado artesanal. Ideal para días fríos.",
+    image: "/images/promo2.jpeg",
+    link: "/menu",
+    tag: "Favorito del mes",
+  },
+  {
+    id: 3,
+    title: "Cena para 2",
+    desc: "Cena romántica con postre incluido. Reserva anticipada.",
+    image: "/images/promo3.jpeg",
+    link: "/reservaciones",
+    tag: "Oferta especial",
+  },
+];
+

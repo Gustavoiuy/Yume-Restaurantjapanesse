@@ -1,201 +1,121 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useCounter } from "@/hooks/useCounter";
-import { Utensils } from "lucide-react";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { promotions } from "../lib/data";
 
-export default function About() {
-  const { count: experienceCount, ref: experienceRef } = useCounter(15);
-  const { count: chefsCount, ref: chefsRef } = useCounter(50);
+export default function PromotionsCarousel() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % promotions.length);
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide = () => setCurrent((prev) => (prev + 1) % promotions.length);
+  const prevSlide = () =>
+    setCurrent((prev) => (prev - 1 + promotions.length) % promotions.length);
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Images Grid */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 gap-4"
-          >
+    <section className="relative py-24 bg-[#0F172B] overflow-hidden">
+      {/* Fondo decorativo */}
+      <div className="absolute inset-0 opacity-10 bg-[url('/images/pattern.png')] bg-repeat"></div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h5 className="text-[#FEA116] font-secondary text-lg mb-3 uppercase tracking-widest">
+            Promociones Exclusivas
+          </h5>
+          <h2 className="text-4xl lg:text-5xl font-bold text-white">
+            Sabores únicos, precios irresistibles
+          </h2>
+        </motion.div>
+
+        {/* Carrusel principal */}
+        <div className="relative flex items-center justify-center h-[650px]">
+          {/* Imagen y contenido animado */}
+          <AnimatePresence mode="wait">
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative"
+              key={promotions[current].id}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+              className="relative w-full max-w-4xl mx-auto"
             >
-              <Image
-                src="/images/about-1.jpg"
-                alt="About 1"
-                width={300}
-                height={300}
-                className="w-full rounded-lg"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative mt-8"
-            >
-              <Image
-                src="/images/about-2.jpg"
-                alt="About 2"
-                width={300}
-                height={300}
-                className="w-full rounded-lg"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="relative"
-            >
-              <Image
-                src="/images/about-3.jpg"
-                alt="About 3"
-                width={300}
-                height={300}
-                className="w-full rounded-lg"
-              />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="relative mt-8"
-            >
-              <Image
-                src="/images/about-4.jpg"
-                alt="About 4"
-                width={300}
-                height={300}
-                className="w-full rounded-lg"
-              />
-            </motion.div>
-          </motion.div>
-
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <motion.h5
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-[#FEA116] font-secondary text-lg mb-2"
-            >
-              About Us
-            </motion.h5>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-4xl lg:text-5xl font-bold text-[#0F172B] mb-6"
-            >
-              Welcome to{" "}
-              <span className="text-[#FEA116] inline-flex items-center">
-                <Utensils className="mr-2" />
-                Your app name
-              </span>
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-gray-600 mb-4 leading-relaxed"
-            >
-              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-              diam amet diam et eos erat ipsum et lorem et sit, sed stet lorem
-              sit.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="text-gray-600 mb-8 leading-relaxed"
-            >
-              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-              diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
-              lorem sit clita duo justo magna dolore erat amet
-            </motion.p>
-
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 1 }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8"
-            >
-              <div className="flex items-center border-l-4 border-[#FEA116] pl-4">
-                <div className="flex-shrink-0">
-                  <span
-                    ref={experienceRef}
-                    className="text-4xl font-bold text-[#FEA116]"
-                  >
-                    {experienceCount}
-                  </span>
-                </div>
-                <div className="ml-4">
-                  <p className="text-gray-600 mb-0">Years of</p>
-                  <h6 className="text-[#0F172B] font-semibold uppercase">
-                    Experience
-                  </h6>
-                </div>
+              {/* Fondo con blur */}
+              <div className="absolute inset-0">
+                <Image
+                  src={promotions[current].image}
+                  alt={promotions[current].title}
+                  fill
+                  className="object-cover object-center blur-2xl opacity-30 scale-110"
+                />
               </div>
 
-              <div className="flex items-center border-l-4 border-[#FEA116] pl-4">
-                <div className="flex-shrink-0">
-                  <span
-                    ref={chefsRef}
-                    className="text-4xl font-bold text-[#FEA116]"
-                  >
-                    {chefsCount}
-                  </span>
-                </div>
-                <div className="ml-4">
-                  <p className="text-gray-600 mb-0">Popular</p>
-                  <h6 className="text-[#0F172B] font-semibold uppercase">
-                    Master Chefs
-                  </h6>
+              {/* Imagen principal centrada */}
+              <div className="relative flex justify-center items-center rounded-3xl overflow-hidden shadow-2xl border border-white/10 backdrop-blur-md">
+                <Image
+                  src={promotions[current].image}
+                  alt={promotions[current].title}
+                  width={450}
+                  height={600}
+                  className="rounded-2xl object-contain w-auto h-[600px]"
+                  priority
+                />
+                {/* Overlay contenido */}
+                <div className="absolute bottom-8 left-0 right-0 text-center px-6">
+                  <div className="bg-black/50 backdrop-blur-sm inline-block rounded-full px-4 py-1 mb-3">
+                    <span className="text-[#FEA116] text-xs font-semibold uppercase tracking-wider">
+            
+                    </span>
+                  </div>
+                 
+               
                 </div>
               </div>
             </motion.div>
+          </AnimatePresence>
 
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#FEA116] text-white px-8 py-4 rounded-md font-semibold hover:bg-[#FEA116]/90 transition-colors duration-300"
-            >
-              Read More
-            </motion.button>
-          </motion.div>
+          {/* Botones de navegación */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-6 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full transition"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-6 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-3 rounded-full transition"
+          >
+            <ChevronRight size={24} />
+          </button>
+
+          {/* Indicadores inferiores */}
+          <div className="absolute bottom-4 flex justify-center w-full gap-2">
+            {promotions.map((_, i) => (
+              <div
+                key={i}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  i === current
+                    ? "bg-[#FEA116] scale-110"
+                    : "bg-gray-500/40 hover:bg-gray-300/60"
+                }`}
+              ></div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
