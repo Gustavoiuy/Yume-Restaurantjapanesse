@@ -1,6 +1,5 @@
-import Menusection from "@/components/Menusection";
+import MenuSection from "@/components/Menusection";
 import { menuData } from "@/lib/data";
-
 
 interface PageProps {
   params: {
@@ -8,14 +7,23 @@ interface PageProps {
   };
 }
 
-export default function MenuCategoryPage({ params }: { params: PageProps["params"] }) {
+export default async function MenuCategoryPage({ params }: PageProps) {
   const categoryData = menuData.find(
     (section) => section.category.toLowerCase() === params.category.toLowerCase()
   );
 
   if (!categoryData) {
-    return <p className="text-center text-gray-500 py-20">Categoría no encontrada.</p>;
+    return (
+      <p className="text-center text-gray-500 py-20">
+        Categoría no encontrada.
+      </p>
+    );
   }
 
-  return <Menusection title={categoryData.category} dishes={categoryData.items} />;
+  return (
+    <MenuSection
+      title={categoryData.category}
+      dishes={categoryData.items}
+    />
+  );
 }
