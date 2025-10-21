@@ -1,5 +1,6 @@
 import MenuSection from "@/components/Menusection";
 import { menuData } from "@/lib/data";
+import Link from "next/link";
 
 export default function MenuCategoryPage({
   params,
@@ -20,12 +21,12 @@ export default function MenuCategoryPage({
         <p className="text-gray-600 mb-6">
           La categoría <strong>{params.category}</strong> no existe.
         </p>
-        <a
+        <Link
           href="/menu"
           className="px-4 py-2 bg-[#FEA116] text-white rounded-xl shadow hover:bg-[#e08f10] transition"
         >
           Volver al menú
-        </a>
+        </Link>
       </main>
     );
   }
