@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import About from "@/components/About";
+import About from "@/components/Promociones";
 import BackToTop from "@/components/BackToTop";
 import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
@@ -15,7 +15,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-              About Us
+             Promociones
             </h1>
             <div className="flex items-center justify-center text-gray-300">
               <Link

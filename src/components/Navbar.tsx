@@ -10,7 +10,7 @@ import { useScroll } from "@/hooks/useScroll";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
+  { name: "Promociones", href: "/Promociones" },
   { name: "Service", href: "/service" },
   { name: "Menu", href: "/menu" },
   { name: "Contact", href: "/contact" },

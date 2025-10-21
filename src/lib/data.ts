@@ -17,13 +17,13 @@ export const services: ServiceItem[] = [
     id: 3,
     title: "Rollos sushi",
     image: "/images/rollo.jpeg",
-    link: "/menu/postres",
+    link: "/menu/rollos",
   },
   {
     id: 4,
     title: "Postres",
     image: "/images/rolls.jpeg",
-    link: "/menu/bebidas",
+    link: "/menu/postres",
   },
 
 ];
@@ -206,4 +206,100 @@ export const promotions:Promotions[]= [
     tag: "Oferta especial",
   },
 ];
+
+export interface Dish {
+  id: number;
+  name: string;
+  desc: string;
+  price: number;
+  image: string;
+}
+
+export interface MenuCategory {
+  category: string;
+  items: Dish[];
+}
+
+// src/lib/menuData.ts
+
+export const menuData = [
+  {
+    category: "entradas",
+    items: [
+      { id: 1, name: "Camarones Spicy", desc: "Camarones con aderezo.", price: 80, image: "/images/Camaronesspicy.jpg" },
+     
+      { id: 2, name: "Tama Ball", desc: "Bola de arroz rellena de tampico y camarón.", price: 185, image: "/images/Tamaball.jpg" },
+      { id: 3, name: "Kani Gyosas", desc: "3 pz de cangrejo con salsa agridulce.", price: 90, image: "/images/Kanigyosas.jpg" },
+    ],
+  },
+  {
+    category: "ensaladas",
+    items: [
+      { id: 1, name: "Teriyaki Salad", desc: "Pollo, aguacate y lechuga con aderezo.", price: 180, image: "/images/teriyaki-salad.jpg" },
+      { id: 2, name: "Yasai", desc: "Verduras mixtas frescas con aderezo.", price: 128, image: "/images/yasai.jpg" },
+      { id: 3, name: "Yasai Salmón", desc: "Salmón y mix de verduras con aderezo.", price: 200, image: "/images/yasai-salmon.jpg" },
+      { id: 4, name: "Chuka Salad", desc: "Espinaca, pepino, cangrejo y chuka.", price: 150, image: "/images/chuka-salad.jpg" },
+      { id: 5, name: "Sunomono", desc: "Pepino, pulpo, camarón y ajonjolí.", price: 170, image: "/images/sunomono.jpg" },
+    ],
+  },
+  {
+    category: "sopas",
+    items: [
+      { id: 1, name: "Sumashi", desc: "Sopa con wakame, pulpo y salmón.", price: 70, image: "/images/sumashi.jpg" },
+      { id: 2, name: "Miso Shiro", desc: "Tofu, wakame y cebollín en fondo miso.", price: 50, image: "/images/miso-shiro.jpg" },
+      { id: 3, name: "Torisozui", desc: "Arroz, huevo y pollo en fondo de pollo.", price: 100, image: "/images/torisozui.jpg" },
+      { id: 4, name: "Sopa Udon", desc: "Camarón tempura y pasta udon.", price: 120, image: "/images/udon.jpg" },
+    ],
+  },
+  {
+    category: "yakimeshi",
+    items: [
+      { id: 1, name: "Verduras", desc: "Arroz frito con verduras.", price: 70, image: "/images/yakimeshi-verduras.jpg" },
+      { id: 2, name: "Pollo", desc: "Arroz frito con verduras y pollo.", price: 80, image: "/images/yakimeshi-pollo.jpg" },
+      { id: 3, name: "Filete", desc: "Arroz frito con carne.", price: 100, image: "/images/yakimeshi-filete.jpg" },
+      { id: 4, name: "Camarón", desc: "Arroz frito con verduras y camarón.", price: 120, image: "/images/yakimeshi-camaron.jpg" },
+      { id: 5, name: "Mixto", desc: "Pollo, carne y camarón con verduras.", price: 120, image: "/images/yakimeshi-mixto.jpg" },
+    ],
+  },
+  {
+    category: "platos-fuertes",
+    items: [
+      { id: 1, name: "Tori Rollo", desc: "Pechuga rellena de verduras y queso.", price: 180, image: "/images/tori-rollo.jpg" },
+      { id: 2, name: "Teriyaki Pollo", desc: "Pollo con arroz gohan y salsa dulce.", price: 165, image: "/images/teriyaki-pollo.jpg" },
+      { id: 3, name: "Teriyaki Filete", desc: "Carne con arroz gohan y ensalada.", price: 170, image: "/images/teriyaki-filete.jpg" },
+      { id: 4, name: "Teriyaki Salmón", desc: "Salmón y verduras con salsa dulce.", price: 195, image: "/images/teriyaki-salmon.jpg" },
+      { id: 5, name: "Udon Teriyaki", desc: "Pollo, carne y camarón con pasta udon.", price: 220, image: "/images/udon-teriyaki.jpg" },
+    ],
+  },
+  {
+    category: "rollos",
+    items: [
+      { id: 1, name: "California Roll", desc: "Cangrejo, aguacate y pepino.", price: 130, image: "/images/california.jpg" },
+      { id: 2, name: "Philadelphia Roll", desc: "Queso crema y salmón.", price: 145, image: "/images/philadelphia.jpg" },
+      { id: 3, name: "Set Roll", desc: "Camarón empanizado con queso crema.", price: 161, image: "/images/set-roll.jpg" },
+      { id: 4, name: "Tuna Spicy Roll", desc: "Atún flameado con salsa de anguila.", price: 150, image: "/images/tuna-spicy.jpg" },
+      { id: 5, name: "Furai Roll", desc: "Rollo empanizado con salsa chipotle.", price: 165, image: "/images/furai-roll.jpg" },
+    ],
+  },
+  {
+    category: "postres",
+    items: [
+      { id: 1, name: "Mochi (2 pzas)", desc: "Helado japonés envuelto en arroz dulce.", price: 110, image: "/images/mochi.jpg" },
+      { id: 2, name: "Banana Ice", desc: "Plátano frito con helado.", price: 110, image: "/images/banana-ice.jpg" },
+      { id: 3, name: "Tempura Helado", desc: "Helado tempurizado con topping.", price: 120, image: "/images/tempura-helado.jpg" },
+    ],
+  },
+  {
+    category: "bebidas",
+    items: [
+      { id: 1, name: "Agua", desc: "Agua natural o mineral.", price: 20, image: "/images/agua.jpg" },
+      { id: 2, name: "Coca Cola", desc: "Regular, Light o Zero.", price: 40, image: "/images/coca.jpg" },
+      { id: 3, name: "Limonada", desc: "Clásica o mineral.", price: 45, image: "/images/limonada.jpg" },
+      { id: 4, name: "Cerveza", desc: "Nacional o importada.", price: 60, image: "/images/cerveza.jpg" },
+      { id: 5, name: "Café Capuccino", desc: "Caliente o frappe.", price: 60, image: "/images/capuccino.jpg" },
+    ],
+  },
+];
+
+
 
