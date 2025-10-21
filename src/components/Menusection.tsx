@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Dish } from "@/lib/data";
-import { ChevronRight, Home, X } from "lucide-react";
+import { ChevronRight, Home,  } from "lucide-react";
 import Image from "next/image";
 import Navbar from "./Navbar";
 import Link from "next/link";
