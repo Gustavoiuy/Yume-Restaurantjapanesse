@@ -2,14 +2,16 @@ import MenuSection from "@/components/Menusection";
 import { menuData } from "@/lib/data";
 import Link from "next/link";
 
-export default function MenuCategoryPage({
+export default async function MenuCategoryPage({
   params,
 }: {
-  params: { category: string };
+  params: Promise<{ category: string }>;
 }) {
+  const { category } = await params;
+
   const categoryData = menuData.find(
     (section) =>
-      section.category.toLowerCase() === params.category.toLowerCase()
+      section.category.toLowerCase() === category.toLowerCase()
   );
 
   if (!categoryData) {
@@ -19,7 +21,7 @@ export default function MenuCategoryPage({
           Categoría no encontrada
         </h1>
         <p className="text-gray-600 mb-6">
-          La categoría <strong>{params.category}</strong> no existe.
+          La categoría <strong>{category}</strong> no existe.
         </p>
         <Link
           href="/menu"
