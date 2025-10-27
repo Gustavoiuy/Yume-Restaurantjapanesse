@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
-import { ChevronRight, Home, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { ChevronRight, Home, Phone, MapPin, Clock } from "lucide-react";
 import Link from "next/link";
 import { ContactForm } from "@/types";
 
@@ -17,20 +17,8 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-  };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+
 
   return (
     <main className="min-h-screen">

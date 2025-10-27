@@ -1,7 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
-import { menuData } from "@/lib/data";
-import Navbar from "@/components/Navbar";
+
+
 import { Download } from "lucide-react";
 
 export default function MenuPdf() {

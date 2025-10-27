@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+
 import { menuItems } from "@/lib/data";
 import MenuPdf from "@/components/Menupdf";
 
@@ -19,12 +19,7 @@ const categories = [
 ];
 
 export default function MenuPage() {
-  const [activeCategory, setActiveCategory] = useState("all");
-
-  const filteredItems =
-    activeCategory === "all"
-      ? menuItems
-      : menuItems.filter((item) => item.category === activeCategory);
+  
 
   return (
     <main className="min-h-screen">
