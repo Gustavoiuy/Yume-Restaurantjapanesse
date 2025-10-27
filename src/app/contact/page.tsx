@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import { ChevronRight, Home, Phone, MapPin, Clock } from "lucide-react";
 import Link from "next/link";
-import { ContactForm } from "@/types";
+
 
 export default function ContactPage() {
   
