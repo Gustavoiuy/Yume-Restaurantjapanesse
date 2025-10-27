@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import {
   
   Phone,
-  Mail,
+
   MapPin,
   Utensils,
 } from "lucide-react";

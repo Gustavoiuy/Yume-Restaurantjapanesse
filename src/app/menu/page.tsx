@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -8,15 +8,8 @@ import BackToTop from "@/components/BackToTop";
 import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 
-import { menuItems } from "@/lib/data";
 import MenuPdf from "@/components/Menupdf";
 
-const categories = [
-  { id: "all", name: "All" },
-  { id: "burger", name: "Burgers" },
-  { id: "snack", name: "Snacks" },
-  { id: "beverage", name: "Beverages" },
-];
 
 export default function MenuPage() {
   
