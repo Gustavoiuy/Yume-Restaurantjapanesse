@@ -3,7 +3,7 @@ import { MenuItem, Promotions, ServiceItem, TeamMember, Testimonial } from "@/ty
 export const services: ServiceItem[] = [
 {
     id: 1,
-    title: "Brochetas",
+    title: "Entradas",
     image: "/images/entradas.jpg",
     link: "/menu/entradas",
   },
@@ -22,7 +22,7 @@ export const services: ServiceItem[] = [
   {
     id: 4,
     title: "Postres",
-    image: "/images/rolls.jpeg",
+    image: "/images/bananaice.jpg",
     link: "/menu/postres",
   },
 

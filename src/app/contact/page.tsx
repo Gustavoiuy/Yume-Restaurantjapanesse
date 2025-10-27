@@ -62,98 +62,7 @@ export default function ContactPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-3xl font-bold text-dark mb-6">
-                Send us a Message
-              </h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Your Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-                      required
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Subject
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-                    required
-                  />
-                </div>
-                <motion.button
-                  type="submit"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-primary text-white px-8 py-4 rounded-md font-semibold hover:bg-primary/90 transition-colors duration-300"
-                >
-                  Send Message
-                </motion.button>
-              </form>
-            </motion.div>
-
+         
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -162,7 +71,7 @@ export default function ContactPage() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl font-bold text-dark mb-6">
-                Get in Touch
+                
               </h2>
               <div className="space-y-8">
                 <div className="flex items-start">
@@ -171,9 +80,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-dark mb-2">
-                      Address
+                      Direccion
                     </h3>
-                    <p className="text-gray-600">123 Street, New York, USA</p>
+                    <p className="text-gray-600">Fuentes de Satelite 146</p>
                   </div>
                 </div>
 
@@ -183,36 +92,24 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-dark mb-2">
-                      Phone
+                      Telefono
                     </h3>
-                    <p className="text-gray-600">+012 345 67890</p>
+                    <p className="text-gray-600">+52 55 95 71 94 00</p>
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="bg-primary p-3 rounded-full mr-4">
-                    <Mail className="text-white" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-dark mb-2">
-                      Email
-                    </h3>
-                    <p className="text-gray-600">info@example.com</p>
-                  </div>
-                </div>
-
+              
                 <div className="flex items-start">
                   <div className="bg-primary p-3 rounded-full mr-4">
                     <Clock className="text-white" size={24} />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-dark mb-2">
-                      Opening Hours
+                    Horarios
                     </h3>
                     <div className="text-gray-600 space-y-1">
-                      <p>Monday - Friday: 09:00 AM - 09:00 PM</p>
-                      <p>Saturday: 09:00 AM - 10:00 PM</p>
-                      <p>Sunday: 10:00 AM - 08:00 PM</p>
+                      <p>Martes - domingos: 1:00 pm - 09:00 PM</p>
+                    
                     </div>
                   </div>
                 </div>
