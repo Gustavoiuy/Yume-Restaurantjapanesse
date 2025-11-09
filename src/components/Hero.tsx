@@ -48,13 +48,13 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Link href="/booking">
+              <Link href="/menu">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-[#0a0608] text-white px-8 py-4 rounded-md font-semibold text-lg hover:bg-[#c70e5b]/90 transition-colors duration-300"
                 >
-                  Reservar mesa
+                  Ver Menu
                 </motion.button>
               </Link>
 

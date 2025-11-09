@@ -9,6 +9,7 @@ import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 
 import MenuPdf from "@/components/Menupdf";
+import Services from "@/components/Services";
 
 
 export default function MenuPage() {
@@ -39,8 +40,9 @@ export default function MenuPage() {
           </div>
         </div>
       </section>
-
+  <Services/>
       <MenuPdf/>
+    
     
       <Footer />
       <BackToTop />
