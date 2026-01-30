@@ -48,7 +48,7 @@ export default function Services() {
         ReservationDate: localDateTime 
       };
 
-      const response = await fetch('http://localhost:5177/api/Reservation', {
+      const response = await fetch('https://apiecommercev1-d2bee5hpchghavcy.canadacentral-01.azurewebsites.net/api/Reservation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
