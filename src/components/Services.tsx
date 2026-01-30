@@ -22,15 +22,15 @@ export default function Services() {
   const [loading, setLoading] = useState(false);
   
   const { register, handleSubmit, formState: { errors } } = useForm<ReservationData>();
-
-  // PASO 1: Mostrar el Resumen (Ticket)
+  const today = new Date().toISOString().split("T")[0]; 
+  
   const handleShowSummary = (data: ReservationData) => {
     setFormData(data);
     setShowSummary(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // PASO 2: Confirmación Final y envío a .NET
+ 
   const confirmFinalReservation = async () => {
     if (!formData) return;
     setLoading(true);
@@ -109,7 +109,6 @@ export default function Services() {
     );
   }
 
-  // VISTA 1: El Formulario Original
   return (
     <section className="relative py-20 bg-[#fdfdfd] overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent" />
@@ -134,7 +133,7 @@ export default function Services() {
                 <input 
                   {...register("nombre", { required: "Tu nombre es necesario" })}
                   className={`w-full p-4 bg-slate-50 border ${errors.nombre ? 'border-red-400' : 'border-slate-200'} rounded-2xl outline-none transition-all duration-300`}
-                  placeholder="Ej. Gustavo Iturbide"
+                  placeholder="Tu nombre completo"
                 />
               </div>
 
@@ -170,14 +169,32 @@ export default function Services() {
                 <label className="flex items-center text-sm font-semibold text-slate-700 ml-1">
                   <Calendar size={16} className="mr-2 text-red-500" /> Fecha
                 </label>
-                <input type="date" {...register("fecha", { required: true })} className="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none" />
-              </div>
+                <input
+                  type="date"
+                  min={today} // esto limita el calendario visualmente
+                  {...register("fecha", {
+                    required: "La fecha es obligatoria",
+                    validate: value => value >= today || "No puedes elegir fechas pasadas"
+                  })}
+                  className="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none"
+                />
+               </div>
 
               <div className="space-y-2">
                 <label className="flex items-center text-sm font-semibold text-slate-700 ml-1">
                   <Clock size={16} className="mr-2 text-red-500" /> Hora
                 </label>
-                <input type="time" {...register("hora", { required: true })} className="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none" />
+                <input
+                  type="time"
+                  min="13:00"   // 1 pm
+                  max="21:00"   // 9 pm
+                  {...register("hora", {
+                    required: "La hora es obligatoria",
+                    validate: value =>
+                      (value >= "13:00" && value <= "21:00") || "Horario permitido de 1pm a 9pm"
+                  })}
+                  className="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none"
+                />
               </div>
 
               <div className="space-y-2">
