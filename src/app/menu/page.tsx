@@ -2,15 +2,14 @@
 
 
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import BackToTop from "@/components/BackToTop";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
+import BackToTop from "@/components/ui/BackToTop";
 import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 
-import MenuPdf from "@/components/Menupdf";
-import Services from "@/components/Services";
-
+import MenuPdf from "@/components/Menu/Menupdf";
+import MenuItems from "@/components/Menu/MenuItems";
 
 export default function MenuPage() {
   
@@ -40,9 +39,9 @@ export default function MenuPage() {
           </div>
         </div>
       </section>
-  <Services/>
+       <MenuItems/>
       <MenuPdf/>
-    
+     
     
       <Footer />
       <BackToTop />

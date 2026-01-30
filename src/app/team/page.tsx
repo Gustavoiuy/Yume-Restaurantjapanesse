@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import BackToTop from "@/components/BackToTop";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
+import BackToTop from "@/components/ui/BackToTop";
 import { ChevronRight, Home, Facebook, Twitter, Instagram } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";

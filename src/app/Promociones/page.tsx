@@ -1,7 +1,7 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import About from "@/components/Promociones";
-import BackToTop from "@/components/BackToTop";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
+import About from '@/components/promociones/Promociones';
+import BackToTop from "@/components/ui/BackToTop";
 import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 

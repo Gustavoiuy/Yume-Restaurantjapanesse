@@ -1,4 +1,5 @@
-import MenuSection from "@/components/Menusection";
+
+import MenuSection from "@/components/Menu/Menusection";
 import { menuData } from "@/lib/data";
 import Link from "next/link";
 
